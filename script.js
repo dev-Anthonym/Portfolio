@@ -1,200 +1,234 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /* =========================================================
-     1. Tema claro / escuro (com persistência)
-  ========================================================= */
+  const EN = {
+    "nav.sobre": "about",
+    "nav.tec": "stack",
+    "nav.projetos": "projects",
+    "nav.formacao": "education",
+    "nav.cert": "certificates",
+    "nav.traj": "journey",
+    "nav.conteudos": "content",
+    "nav.contato": "contact",
+    "theme.dark": "dark",
+    "theme.light": "light",
+
+    "hero.role": "Back-end Java developer in training · Computer Science at UNA Contagem",
+    "hero.pitch": "I study Java every day and build systems that solve real problems, like the support ticket triage I deal with at my IT internship.",
+    "hero.status": "Open to software development internships",
+    "hero.cta1": "See projects",
+    "hero.cta2": "Download résumé",
+    "hero.cta3": "Get in touch",
+    "hero.file": "AboutMe.java",
+    "hero.code": '<code><span class="k">public class</span> <span class="t">AboutMe</span> {\n\n    <span class="t">String</span> name     = <span class="s">"Anthony Magalhães"</span>;\n    <span class="t">String</span> degree   = <span class="s">"Computer Science"</span>;\n    <span class="t">String</span> focus    = <span class="s">"Back-end"</span>;\n    <span class="t">String</span> language = <span class="s">"Java"</span>;\n    <span class="t">String</span> city     = <span class="s">"Contagem, Brazil"</span>;\n    <span class="t">boolean</span> openToInternship = <span class="k">true</span>;\n\n    <span class="c">// always learning something new</span>\n}</code>',
+
+    "sobre.title": "About me",
+    "sobre.p1": "I'm a Computer Science student at UNA Contagem and, since June 2025, an IT intern at the Municipal Administration Department of Contagem, where I support users and manage the Moodle platform.",
+    "sobre.p2": "I want to build a career in back-end development with Java: business rules, APIs and data persistence. I study a little every day, build a small system every week to practice on my own, and document this journey in public, here and on my social media.",
+    "sobre.p3": "I use generative AI as a tool for studying and building software, and my goal is to always understand the code that goes into my projects.",
+    "sobre.interesses": "interests",
+    "sobre.interesses.list": "<li>Back-end development</li><li>Databases</li><li>Software architecture</li><li>AI applied to real problems</li>",
+    "sobre.objetivos": "goals",
+    "sobre.objetivos.list": "<li>Land a software development internship</li><li>Go deeper into Java and Spring Boot</li><li>Become fluent in English</li><li>Graduate in 2028</li>",
+    "sobre.github": "github activity",
+
+    "tec.title": "Stack",
+    "tec.java": "Main language, daily OOP practice",
+    "tec.spring": "REST APIs in the Ticket Triage System",
+    "tec.sqlite": "Data persistence in IntegraSaúde",
+    "tec.git": "Version control with Conventional Commits",
+    "tec.eclipse": "Everyday IDE, with Spring Tools",
+    "tec.uso": "using",
+    "tec.estudando": "learning",
+
+    "proj.title": "Projects",
+    "proj.dev": "in development",
+    "proj.done": "completed",
+    "proj.andamento": "in progress",
+    "proj.repo": "View repository",
+    "proj.triagem.title": "AI-powered Ticket Triage System",
+    "proj.triagem.desc": "It started at my internship, where support tickets are read and sorted by hand. When a ticket is opened, a generative AI classifies its category and priority, summarizes the issue and suggests a reply.",
+    "proj.triagem.feat": "<li>Automatic triage with the Claude API</li><li>Reports built with SQL queries</li><li>Weekly CSV report</li>",
+    "proj.integra.desc": "Medication and appointment reminders with patient and caregiver profiles. If a dose isn't confirmed in time, the caregiver gets an alert. A group project for the Software Quality Assurance course, where I was in charge of development.",
+    "proj.curso.desc": "The code from my daily Java and Object-Oriented Programming studies, organized lesson by lesson. It's the most honest record of my progress.",
+
+    "form.title": "Education",
+    "form.curso": "Bachelor's in Computer Science",
+    "form.previsao": "Expected graduation: Dec 2028",
+
+    "cert.title": "Certificates",
+    "cert.java": "Java: Object-Oriented Programming and Projects",
+    "cert.ingles": "English from beginner to fluency",
+    "cert.note": "New certificates will show up here as soon as they're completed.",
+
+    "traj.title": "Timeline",
+    "traj.sub": "My journey told as a commit history, newest first.",
+    "traj.1": "<b>feat:</b> started documenting my progress in public on GitHub, LinkedIn, Instagram and YouTube",
+    "traj.2": "<b>feat(project):</b> started the AI-powered Ticket Triage System",
+    "traj.3": "<b>feat(project):</b> delivered IntegraSaúde",
+    "traj.4": "<b>chore(studies):</b> started Java and English courses on Udemy",
+    "traj.5": "<b>feat(career):</b> IT internship at Contagem City Hall",
+    "traj.6": "<b>init:</b> started my Computer Science degree at UNA Contagem",
+
+    "cont.title": "Content",
+    "cont.sub": "Where I share what I'm learning.",
+    "cont.yt": "Video lessons in English about what I'm studying in Java, reflections and my progress in tech.",
+    "cont.ig": "Quick explanations, news and tech memes, in a more relaxed tone.",
+    "cont.li": "My professional journey: projects, courses and lessons learned.",
+
+    "contato.title": "Contact",
+    "contato.sub": "The fastest way to reach me is by email or LinkedIn.",
+    "form.nome": "Name",
+    "form.msg": "Message",
+    "form.enviar": "Send message",
+
+    "footer.ai": "This website was built with generative AI (Claude). My field of study is back-end development with Java."
+  };
+
+  const MSG = {
+    pt: {
+      name: "Informe seu nome.",
+      email: "Informe um e-mail válido.",
+      message: "Escreva uma mensagem com pelo menos 10 caracteres.",
+      check: "Confira os campos destacados.",
+      sent: "Mensagem enviada. Respondo em breve.",
+      mail: "Abrindo seu app de e-mail com a mensagem pronta.",
+      fail: "Não foi possível enviar agora. Tente pelo e-mail dev.anthony.m@gmail.com."
+    },
+    en: {
+      name: "Enter your name.",
+      email: "Enter a valid email.",
+      message: "Write a message with at least 10 characters.",
+      check: "Check the highlighted fields.",
+      sent: "Message sent. I'll get back to you soon.",
+      mail: "Opening your email app with the message ready.",
+      fail: "Couldn't send right now. Try emailing dev.anthony.m@gmail.com."
+    }
+  };
+
+  const store = {
+    get(key) { try { return localStorage.getItem(key); } catch { return null; } },
+    set(key, value) { try { localStorage.setItem(key, value); } catch { } }
+  };
+
   const body = document.body;
-  const themeToggle = document.getElementById("themeToggle");
+  const i18nEls = Array.from(document.querySelectorAll("[data-i18n]"));
+  i18nEls.forEach((el) => { el.dataset.pt = el.innerHTML; });
+
+  let lang = store.get("portfolio-lang") === "en" ? "en" : "pt";
+  let theme = store.get("portfolio-theme") === "light" ? "light" : "dark";
   const themeLabel = document.getElementById("themeLabel");
 
-  function applyTheme(theme) {
+  function applyLang() {
+    document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
+    i18nEls.forEach((el) => {
+      if (el === themeLabel) return;
+      const key = el.dataset.i18n;
+      el.innerHTML = lang === "en" && EN[key] ? EN[key] : el.dataset.pt;
+    });
+    document.querySelectorAll("[data-lang-opt]").forEach((opt) => {
+      opt.classList.toggle("is-on", opt.dataset.langOpt === lang);
+    });
+    applyTheme();
+  }
+
+  function applyTheme() {
     body.setAttribute("data-theme", theme);
-    themeLabel.textContent = theme === "dark" ? "modo escuro" : "modo claro";
+    const key = theme === "dark" ? "theme.dark" : "theme.light";
+    themeLabel.textContent = lang === "en" ? EN[key] : (theme === "dark" ? "escuro" : "claro");
   }
 
-  const savedTheme = localStorage.getItem("portfolio-theme");
-  applyTheme(savedTheme === "light" ? "light" : "dark");
-
-  themeToggle.addEventListener("click", () => {
-    const current = body.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
-    applyTheme(next);
-    localStorage.setItem("portfolio-theme", next);
+  document.getElementById("langToggle").addEventListener("click", () => {
+    lang = lang === "pt" ? "en" : "pt";
+    store.set("portfolio-lang", lang);
+    applyLang();
   });
 
-  /* =========================================================
-     2. Menu mobile (dropdown da navegação na topbar)
-  ========================================================= */
+  document.getElementById("themeToggle").addEventListener("click", () => {
+    theme = theme === "dark" ? "light" : "dark";
+    store.set("portfolio-theme", theme);
+    applyTheme();
+  });
+
+  applyLang();
+
+  const nav = document.getElementById("nav");
   const menuToggle = document.getElementById("menuToggle");
-  const topNav = document.getElementById("topNav");
-
-  function closeMobileMenu() {
-    topNav.classList.remove("is-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  }
-
-  function toggleMobileMenu() {
-    const isOpen = topNav.classList.toggle("is-open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-  }
-
-  menuToggle.addEventListener("click", toggleMobileMenu);
-
-  /* =========================================================
-     3. Navegação: abas da topbar controlam a seção ativa
-  ========================================================= */
-  const sections = Array.from(document.querySelectorAll(".pane"));
-  const tabs = Array.from(document.querySelectorAll(".tab"));
-
-  function setActiveTarget(targetId) {
-    tabs.forEach((tab) => {
-      const isActive = tab.dataset.target === targetId;
-      tab.classList.toggle("is-active", isActive);
-      tab.setAttribute("aria-selected", String(isActive));
-    });
-  }
-
-  // Clique nas abas rola até a seção correspondente e fecha o dropdown mobile
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const target = document.getElementById(tab.dataset.target);
-      if (target) target.scrollIntoView({ behavior: "smooth" });
-      closeMobileMenu();
+  menuToggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    menuToggle.setAttribute("aria-expanded", String(open));
+  });
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
     });
   });
 
-  // CTAs internos (ex.: "ver projetos", "falar comigo") também fecham o menu
-  document.querySelectorAll("a[data-target]").forEach((link) => {
-    link.addEventListener("click", () => closeMobileMenu());
-  });
-
-  // Scroll-spy: destaca a seção visível no momento
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveTarget(entry.target.id);
-        }
+  const navLinks = Array.from(nav.querySelectorAll("a"));
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach((link) => {
+        link.classList.toggle("is-active", link.getAttribute("href") === "#" + entry.target.id);
       });
-    },
-    { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
-  );
+    });
+  }, { rootMargin: "-40% 0px -55% 0px" });
+  document.querySelectorAll("main section[id]").forEach((section) => spy.observe(section));
 
-  sections.forEach((section) => observer.observe(section));
-
-  /* =========================================================
-     4. Botão "voltar ao topo"
-  ========================================================= */
-  const backToTop = document.getElementById("backToTop");
-  const scrollContainer = document.querySelector(".editor__scroll");
-
-  function handleScrollVisibility() {
-    const scrolled = window.scrollY > 400;
-    backToTop.classList.toggle("is-visible", scrolled);
-  }
-
-  window.addEventListener("scroll", handleScrollVisibility, { passive: true });
-  handleScrollVisibility();
-
-  backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  document.querySelectorAll(".github-stats img").forEach((img) => {
+    img.addEventListener("error", () => { img.style.display = "none"; });
   });
 
-  /* =========================================================
-     6. Contadores animados (estatísticas do início)
-  ========================================================= */
-  const stats = Array.from(document.querySelectorAll(".stat"));
-
-  function animateCount(el) {
-    const target = parseInt(el.dataset.target, 10) || 0;
-    const valueEl = el.querySelector(".stat__value");
-    const duration = 900;
-    const start = performance.now();
-
-    function step(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      valueEl.textContent = Math.round(eased * target);
-      if (progress < 1) requestAnimationFrame(step);
-    }
-
-    requestAnimationFrame(step);
-  }
-
-  if (stats.length) {
-    const statsObserver = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateCount(entry.target);
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-
-    stats.forEach((stat) => statsObserver.observe(stat));
-  }
-
-  /* =========================================================
-     7. Validação do formulário de contato
-  ========================================================= */
   const form = document.getElementById("contactForm");
-  const fieldName = document.getElementById("fieldName");
-  const fieldEmail = document.getElementById("fieldEmail");
-  const fieldMessage = document.getElementById("fieldMessage");
-  const errorName = document.getElementById("errorName");
-  const errorEmail = document.getElementById("errorEmail");
-  const errorMessage = document.getElementById("errorMessage");
-  const formStatus = document.getElementById("formStatus");
+  const fields = {
+    name: [document.getElementById("fieldName"), document.getElementById("errorName")],
+    email: [document.getElementById("fieldEmail"), document.getElementById("errorEmail")],
+    message: [document.getElementById("fieldMessage"), document.getElementById("errorMessage")]
+  };
+  const status = document.getElementById("formStatus");
 
-  function setError(field, errorEl, message) {
-    if (message) {
-      field.classList.add("has-error");
-      errorEl.textContent = message;
-    } else {
-      field.classList.remove("has-error");
-      errorEl.textContent = "";
-    }
+  function setError(name, message) {
+    const [input, errorEl] = fields[name];
+    input.classList.toggle("has-error", Boolean(message));
+    errorEl.textContent = message || "";
   }
 
-  function isValidEmail(value) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-  }
+  Object.keys(fields).forEach((name) => {
+    fields[name][0].addEventListener("input", () => setError(name, ""));
+  });
 
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    let hasError = false;
+    const t = MSG[lang];
+    const name = fields.name[0].value.trim();
+    const email = fields.email[0].value.trim();
+    const message = fields.message[0].value.trim();
+    let ok = true;
 
-    if (fieldName.value.trim().length < 2) {
-      setError(fieldName, errorName, "Informe seu nome.");
-      hasError = true;
-    } else {
-      setError(fieldName, errorName, "");
-    }
+    if (name.length < 2) { setError("name", t.name); ok = false; } else setError("name", "");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError("email", t.email); ok = false; } else setError("email", "");
+    if (message.length < 10) { setError("message", t.message); ok = false; } else setError("message", "");
 
-    if (!isValidEmail(fieldEmail.value.trim())) {
-      setError(fieldEmail, errorEmail, "Informe um e-mail válido.");
-      hasError = true;
-    } else {
-      setError(fieldEmail, errorEmail, "");
-    }
+    if (!ok) { status.textContent = t.check; return; }
 
-    if (fieldMessage.value.trim().length < 10) {
-      setError(fieldMessage, errorMessage, "Escreva uma mensagem com pelo menos 10 caracteres.");
-      hasError = true;
-    } else {
-      setError(fieldMessage, errorMessage, "");
-    }
-
-    if (hasError) {
-      formStatus.textContent = "Verifique os campos destacados acima.";
+    if (form.action.includes("SEU_ID")) {
+      const subject = encodeURIComponent("Contato pelo portfólio: " + name);
+      const text = encodeURIComponent(message + "\n\n" + name + " (" + email + ")");
+      window.location.href = "mailto:dev.anthony.m@gmail.com?subject=" + subject + "&body=" + text;
+      status.textContent = t.mail;
       return;
     }
 
-    // Sem back-end conectado: aqui a mensagem é apenas confirmada na tela.
-    formStatus.textContent =
-      "Mensagem pronta para envio! Conecte este formulário a um serviço de e-mail (ex.: mailto, Formspree) para recebê-la de fato.";
-    form.reset();
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      });
+      if (!response.ok) throw new Error();
+      status.textContent = t.sent;
+      form.reset();
+    } catch {
+      status.textContent = t.fail;
+    }
   });
 });

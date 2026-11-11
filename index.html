@@ -3,446 +3,405 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anthony Magalhães — Dev Back-end Java</title>
-  <meta name="description" content="Portfólio profissional de Anthony Rafael Braga Magalhães, estudante de Ciência da Computação e futuro desenvolvedor back-end Java.">
+  <title>Anthony Magalhães | Dev Back-end Java</title>
+  <meta name="description" content="Portfólio de Anthony Rafael Braga Magalhães, estudante de Ciência da Computação e desenvolvedor back-end Java em formação.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="dark">
 
-  <!-- Barra superior única: marca + navegação + tema -->
   <header class="topbar">
-    <div class="topbar__brand">
-      <span class="topbar__brand-icon">&gt;_</span>
-      <div>
-        <p class="topbar__brand-name">Anthony Magalhães</p>
-        <p class="topbar__brand-role">dev back-end java</p>
+    <div class="topbar__inner">
+      <a href="#inicio" class="brand" aria-label="Início">
+        <span class="brand__prompt">&gt;_</span>
+        <span class="brand__name">Anthony Magalhães</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Seções">
+        <a href="#sobre" data-i18n="nav.sobre">sobre</a>
+        <a href="#tecnologias" data-i18n="nav.tec">tecnologias</a>
+        <a href="#projetos" data-i18n="nav.projetos">projetos</a>
+        <a href="#formacao" data-i18n="nav.formacao">formação</a>
+        <a href="#certificados" data-i18n="nav.cert">certificados</a>
+        <a href="#trajetoria" data-i18n="nav.traj">trajetória</a>
+        <a href="#conteudos" data-i18n="nav.conteudos">conteúdos</a>
+        <a href="#contato" data-i18n="nav.contato">contato</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <button class="pill-btn" id="langToggle" aria-label="Mudar idioma / Change language">
+          <span data-lang-opt="pt">PT</span><span class="pill-btn__sep">/</span><span data-lang-opt="en">EN</span>
+        </button>
+        <button class="pill-btn" id="themeToggle" aria-label="Alternar tema claro ou escuro">
+          <span class="theme-dot" aria-hidden="true"></span>
+          <span id="themeLabel" data-i18n="theme.dark">escuro</span>
+        </button>
+        <button class="menu-btn" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </div>
-
-    <nav class="topbar__nav" id="topNav" role="tablist" aria-label="Seções do portfólio">
-      <button class="tab is-active" data-target="inicio" role="tab" aria-selected="true">início</button>
-      <button class="tab" data-target="sobre" role="tab" aria-selected="false">sobre</button>
-      <button class="tab" data-target="projetos" role="tab" aria-selected="false">projetos</button>
-      <button class="tab" data-target="certificados" role="tab" aria-selected="false">certificados</button>
-      <button class="tab" data-target="contato" role="tab" aria-selected="false">contato</button>
-    </nav>
-
-    <div class="topbar__actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro">
-        <span class="theme-toggle__track">
-          <span class="theme-toggle__thumb"></span>
-        </span>
-        <span class="theme-toggle__label" id="themeLabel">modo escuro</span>
-      </button>
-
-      <button class="topbar__toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="topNav">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
-  <div class="app">
-    <!-- Conteúdo principal, como um painel de editor -->
-    <main class="editor">
-      <div class="editor__scroll">
+  <main class="container">
 
-        <!-- 1. Início -->
-        <section id="inicio" class="pane pane--hero">
-          <p class="code-comment">// início — apresentação</p>
+    <!-- Início -->
+    <section id="inicio" class="hero">
+      <div class="hero__text">
+        <p class="terminal-line">
+          <span class="terminal-line__user">anthony@contagem</span>:<span class="terminal-line__path">~</span>$ whoami<span class="cursor" aria-hidden="true"></span>
+        </p>
 
-          <div class="hero__grid">
-            <div class="hero__content">
-              <div class="hero__photo">
-                <img src="foto-perfil.jpg" alt="Foto de Anthony Rafael Braga Magalhães">
-              </div>
+        <div class="hero__id">
+          <img class="hero__photo" src="foto-perfil.jpg" alt="Foto de Anthony Rafael Braga Magalhães" width="96" height="96">
+          <div>
+            <h1 class="hero__name">Anthony Rafael Braga Magalhães</h1>
+            <p class="hero__role" data-i18n="hero.role">Dev back-end Java em formação · Ciência da Computação na UNA Contagem</p>
+          </div>
+        </div>
 
-              <h1 class="hero__name">Anthony Rafael<br>Braga Magalhães</h1>
-              <p class="hero__role">Ciência da Computação — Centro Universitário UNA Contagem</p>
+        <p class="hero__pitch" data-i18n="hero.pitch">
+          Estudo Java todos os dias e construo sistemas que resolvem problemas reais, como a triagem de chamados de suporte que vejo no meu estágio de TI.
+        </p>
 
-              <p class="hero__pitch">
-                Desenvolvedor back-end em formação, focado em construir sistemas Java
-                robustos, organizados e preparados para crescer.
-              </p>
+        <p class="status"><span class="status__dot" aria-hidden="true"></span><span data-i18n="hero.status">Disponível para estágio em desenvolvimento</span></p>
 
-              <div class="tag-row">
-                <span class="tag">área de interesse: back-end</span>
-                <span class="tag">stack principal: java</span>
-              </div>
+        <div class="cta-row">
+          <a href="#projetos" class="btn btn--primary" data-i18n="hero.cta1">Ver projetos</a>
+          <a href="curriculo.pdf" class="btn btn--ghost" download data-i18n="hero.cta2">Baixar currículo</a>
+          <a href="#contato" class="btn btn--ghost" data-i18n="hero.cta3">Falar comigo</a>
+        </div>
+      </div>
 
-              <div class="cta-row">
-                <a href="#projetos" class="btn btn--primary" data-target="projetos">ver projetos</a>
-                <a href="#contato" class="btn btn--ghost" data-target="contato">falar comigo</a>
-              </div>
-            </div>
+      <div class="code-window">
+        <div class="code-window__bar">
+          <span class="code-window__dot"></span><span class="code-window__dot"></span><span class="code-window__dot"></span>
+          <span class="code-window__file" data-i18n="hero.file">Apresentacao.java</span>
+        </div>
+<pre class="code-window__body" data-i18n="hero.code"><code><span class="k">public class</span> <span class="t">Apresentacao</span> {
 
-            <div class="code-window hero__code">
-              <div class="code-window__bar">
-                <span class="code-window__dot"></span>
-                <span class="code-window__dot"></span>
-                <span class="code-window__dot"></span>
-                <span class="code-window__filename">Apresentacao.java</span>
-              </div>
-              <pre class="code-window__body"><code><span class="tok-keyword">public class</span> <span class="tok-type">Apresentacao</span> {
+    <span class="t">String</span> nome      = <span class="s">"Anthony Magalhães"</span>;
+    <span class="t">String</span> curso     = <span class="s">"Ciência da Computação"</span>;
+    <span class="t">String</span> area      = <span class="s">"Back-end"</span>;
+    <span class="t">String</span> linguagem = <span class="s">"Java"</span>;
+    <span class="t">String</span> cidade    = <span class="s">"Contagem, MG"</span>;
+    <span class="t">boolean</span> disponivelParaEstagio = <span class="k">true</span>;
 
-    <span class="tok-type">String</span> nome = <span class="tok-string">"Anthony Rafael Braga Magalhães"</span>;
-    <span class="tok-type">String</span> curso = <span class="tok-string">"Ciência da Computação"</span>;
-    <span class="tok-type">String</span> area = <span class="tok-string">"Back-end"</span>;
-    <span class="tok-type">String</span> objetivo = <span class="tok-string">"Dev Back-end Java"</span>;
-    <span class="tok-type">boolean</span> disponivel = <span class="tok-keyword">true</span>;
-
-    <span class="tok-comment">// sempre aprendendo algo novo</span>
+    <span class="c">// sempre aprendendo algo novo</span>
 }</code></pre>
-            </div>
-          </div>
+      </div>
+    </section>
 
-          <div class="hero__block">
-            <p class="hero__block-label">objetivo profissional</p>
-            <p class="hero__block-text">
-              Atuar como desenvolvedor back-end Java, contribuindo para sistemas
-              escaláveis, bem arquitetados e fáceis de manter.
-            </p>
-          </div>
+    <!-- Sobre -->
+    <section id="sobre" class="section">
+      <header class="section__head">
+        <p class="section__file">sobre.md</p>
+        <h2 class="section__title" data-i18n="sobre.title">Sobre mim</h2>
+      </header>
+      <div class="section__body">
+        <div class="prose">
+          <p data-i18n="sobre.p1">Sou estudante de Ciência da Computação na UNA Contagem e, desde junho de 2025, estagiário de TI na Secretaria Municipal de Administração de Contagem, onde dou suporte aos usuários e administro a plataforma Moodle.</p>
+          <p data-i18n="sobre.p2">Quero seguir carreira no desenvolvimento back-end com Java: regras de negócio, APIs e persistência de dados. Estudo um pouco todos os dias, faço um sistema pequeno por semana para praticar sozinho e documento essa evolução em público, aqui e nas minhas redes.</p>
+          <p data-i18n="sobre.p3">Uso IA generativa como ferramenta de estudo e de desenvolvimento, e meu objetivo é sempre entender o código que vai para os meus projetos.</p>
+        </div>
 
-          <div class="stats-row">
-            <div class="stat" data-target="3">
-              <p class="stat__number"><span class="stat__value">0</span>+</p>
-              <p class="stat__label">projetos planejados</p>
-            </div>
-            <div class="stat" data-target="2">
-              <p class="stat__number"><span class="stat__value">0</span></p>
-              <p class="stat__label">tecnologias em foco</p>
-            </div>
-            <div class="stat" data-target="1">
-              <p class="stat__number"><span class="stat__value">0</span></p>
-              <p class="stat__label">certificado em andamento</p>
-            </div>
-            <div class="stat" data-target="100">
-              <p class="stat__number"><span class="stat__value">0</span>%</p>
-              <p class="stat__label">focado em back-end</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- 2. Sobre mim -->
-        <section id="sobre" class="pane">
-          <p class="code-comment">// sobre mim</p>
-          <h2 class="pane__title">Sobre mim</h2>
-
-          <p class="pane__lead">
-            Estudante de Ciência da Computação com interesse direcionado ao
-            desenvolvimento back-end, especialmente na construção de regras de
-            negócio, APIs e persistência de dados com Java.
-          </p>
-
-          <div class="grid grid--2">
-            <div class="card">
-              <p class="card__label">interesses</p>
-              <ul class="card__list">
-                <li>Lógica de programação</li>
-                <li>Arquitetura de sistemas</li>
-                <li>Banco de dados</li>
-              </ul>
-            </div>
-
-            <div class="card">
-              <p class="card__label">habilidades</p>
-              <ul class="card__list">
-                <li>Raciocínio lógico</li>
-                <li>Resolução de problemas</li>
-                <li>Organização de código</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="card card--wide">
-            <p class="card__label">matriz de habilidades</p>
-            <div class="skill-matrix">
-              <div class="skill-group">
-                <p class="skill-group__title">linguagens</p>
-                <div class="chip-row">
-                  <span class="chip">Java</span>
-                  <span class="chip">SQL</span>
-                </div>
-              </div>
-
-              <div class="skill-group">
-                <p class="skill-group__title">em estudo</p>
-                <div class="chip-row">
-                  <span class="chip chip--ghost">Spring Boot</span>
-                  <span class="chip chip--ghost">JPA / Hibernate</span>
-                  <span class="chip chip--ghost">APIs REST</span>
-                </div>
-              </div>
-
-              <div class="skill-group">
-                <p class="skill-group__title">banco de dados</p>
-                <div class="chip-row">
-                  <span class="chip">MySQL</span>
-                  <span class="chip chip--ghost">PostgreSQL</span>
-                </div>
-              </div>
-
-              <div class="skill-group">
-                <p class="skill-group__title">ferramentas</p>
-                <div class="chip-row">
-                  <span class="chip">Git &amp; GitHub</span>
-                  <span class="chip">VS Code</span>
-                  <span class="chip chip--ghost">IntelliJ IDEA</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card card--wide">
-            <p class="card__label">boas práticas que eu sigo</p>
-            <div class="code-window">
-              <div class="code-window__bar">
-                <span class="code-window__dot"></span>
-                <span class="code-window__dot"></span>
-                <span class="code-window__dot"></span>
-                <span class="code-window__filename">RelatorioService.java</span>
-              </div>
-              <pre class="code-window__body"><code><span class="tok-comment">// cada classe cuida de uma única responsabilidade</span>
-<span class="tok-keyword">public class</span> <span class="tok-type">RelatorioService</span> {
-    <span class="tok-keyword">public</span> <span class="tok-type">Relatorio</span> gerar(<span class="tok-type">Pedido</span> pedido) {
-        <span class="tok-comment">// regra de negócio, nada de exportação aqui</span>
-        ...
-    }
-}
-
-<span class="tok-keyword">public class</span> <span class="tok-type">RelatorioExportador</span> {
-    <span class="tok-keyword">public</span> <span class="tok-type">void</span> exportarPdf(<span class="tok-type">Relatorio</span> relatorio) {
-        ...
-    }
-}</code></pre>
-            </div>
-            <p class="code-window__caption">
-              Prefiro dividir responsabilidades em classes menores e coesas —
-              fica mais fácil de testar, entender e dar manutenção.
-            </p>
-          </div>
-
-          <div class="card card--wide">
-            <p class="card__label">atividade no github</p>
-            <div class="github-stats">
-              <img
-                src="https://github-readme-stats.vercel.app/api?username=dev-Anthonym&show_icons=true&hide_title=true&bg_color=00000000&title_color=f2f2f0&text_color=9a9ba0&icon_color=f2f2f0&border_color=2d2f34&border_radius=6"
-                alt="Estatísticas do GitHub de dev-Anthonym"
-                loading="lazy">
-              <img
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=dev-Anthonym&layout=compact&hide_title=true&bg_color=00000000&title_color=f2f2f0&text_color=9a9ba0&border_color=2d2f34&border_radius=6"
-                alt="Linguagens mais usadas por dev-Anthonym"
-                loading="lazy">
-            </div>
-          </div>
-
-          <div class="card card--wide">
-            <p class="card__label">objetivos acadêmicos e profissionais</p>
-            <ul class="card__list card__list--spaced">
-              <li>Concluir a graduação em Ciência da Computação</li>
-              <li>Aprofundar conhecimentos em Java para back-end</li>
-              <li>Conquistar certificações relevantes para a área</li>
+        <div class="grid grid--2">
+          <div class="card">
+            <p class="card__label" data-i18n="sobre.interesses">interesses</p>
+            <ul class="list" data-i18n="sobre.interesses.list">
+              <li>Desenvolvimento back-end</li>
+              <li>Banco de dados</li>
+              <li>Arquitetura de sistemas</li>
+              <li>IA aplicada a problemas reais</li>
             </ul>
           </div>
-        </section>
-
-        <!-- 3. Projetos -->
-        <section id="projetos" class="pane">
-          <p class="code-comment">// projetos — em construção</p>
-          <h2 class="pane__title">Projetos</h2>
-          <p class="pane__lead">
-            Em breve, esta seção reunirá os projetos desenvolvidos ao longo da
-            graduação e dos estudos em Java. Cada cartão abaixo é um espaço
-            reservado, pronto para receber um projeto novo.
-          </p>
-
-          <div class="grid grid--3" id="projectsGrid">
-            <article class="project-card project-card--empty">
-              <div class="project-card__top">
-                <div class="project-card__thumb">
-                  <span>{ }</span>
-                </div>
-                <span class="status-badge status-badge--todo">em breve</span>
-              </div>
-              <p class="project-card__title">Projeto em breve</p>
-              <p class="project-card__desc">Reserve este espaço para um título, descrição e tecnologias utilizadas.</p>
-              <ul class="project-card__features">
-                <li>Funcionalidade principal 1</li>
-                <li>Funcionalidade principal 2</li>
-              </ul>
-              <div class="chip-row chip-row--ghost">
-                <span class="chip chip--ghost">tecnologia</span>
-                <span class="chip chip--ghost">tecnologia</span>
-              </div>
-              <span class="btn btn--ghost btn--disabled">adicionar projeto</span>
-            </article>
-
-            <article class="project-card project-card--empty">
-              <div class="project-card__top">
-                <div class="project-card__thumb">
-                  <span>{ }</span>
-                </div>
-                <span class="status-badge status-badge--todo">em breve</span>
-              </div>
-              <p class="project-card__title">Projeto em breve</p>
-              <p class="project-card__desc">Reserve este espaço para um título, descrição e tecnologias utilizadas.</p>
-              <ul class="project-card__features">
-                <li>Funcionalidade principal 1</li>
-                <li>Funcionalidade principal 2</li>
-              </ul>
-              <div class="chip-row chip-row--ghost">
-                <span class="chip chip--ghost">tecnologia</span>
-                <span class="chip chip--ghost">tecnologia</span>
-              </div>
-              <span class="btn btn--ghost btn--disabled">adicionar projeto</span>
-            </article>
-
-            <article class="project-card project-card--empty">
-              <div class="project-card__top">
-                <div class="project-card__thumb">
-                  <span>{ }</span>
-                </div>
-                <span class="status-badge status-badge--todo">em breve</span>
-              </div>
-              <p class="project-card__title">Projeto em breve</p>
-              <p class="project-card__desc">Reserve este espaço para um título, descrição e tecnologias utilizadas.</p>
-              <ul class="project-card__features">
-                <li>Funcionalidade principal 1</li>
-                <li>Funcionalidade principal 2</li>
-              </ul>
-              <div class="chip-row chip-row--ghost">
-                <span class="chip chip--ghost">tecnologia</span>
-                <span class="chip chip--ghost">tecnologia</span>
-              </div>
-              <span class="btn btn--ghost btn--disabled">adicionar projeto</span>
-            </article>
+          <div class="card">
+            <p class="card__label" data-i18n="sobre.objetivos">objetivos</p>
+            <ul class="list" data-i18n="sobre.objetivos.list">
+              <li>Conseguir um estágio em desenvolvimento</li>
+              <li>Aprofundar Java e Spring Boot</li>
+              <li>Ficar fluente em inglês</li>
+              <li>Concluir a graduação em 2028</li>
+            </ul>
           </div>
-        </section>
+        </div>
 
-        <!-- 4. Certificados -->
-        <section id="certificados" class="pane">
-          <p class="code-comment">// certificados — em construção</p>
-          <h2 class="pane__title">Certificados</h2>
-          <p class="pane__lead">
-            Espaço reservado para os certificados de cursos e formações
-            concluídas. Assim que houver um certificado, ele pode substituir
-            um dos cartões abaixo.
-          </p>
-
-          <p class="cert-group__label cert-group__label--first">// concluídos</p>
-          <div class="grid grid--2">
-            <article class="cert-card">
-              <div class="cert-card__icon">▤</div>
-              <p class="cert-card__title">Certificado em breve</p>
-              <p class="cert-card__desc">Nome do curso, instituição e ano de conclusão.</p>
-            </article>
-
-            <article class="cert-card">
-              <div class="cert-card__icon">▤</div>
-              <p class="cert-card__title">Certificado em breve</p>
-              <p class="cert-card__desc">Nome do curso, instituição e ano de conclusão.</p>
-            </article>
+        <div class="card">
+          <p class="card__label" data-i18n="sobre.github">atividade no github</p>
+          <div class="github-stats">
+            <img src="https://github-readme-stats.vercel.app/api?username=dev-Anthonym&show_icons=true&hide_title=true&hide_border=true&bg_color=00000000&title_color=39ff14&text_color=9a9ba0&icon_color=39ff14" alt="Estatísticas do GitHub de dev-Anthonym" loading="lazy">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dev-Anthonym&layout=compact&hide_title=true&hide_border=true&bg_color=00000000&text_color=9a9ba0" alt="Linguagens mais usadas por dev-Anthonym" loading="lazy">
           </div>
-
-          <p class="cert-group__label">// em andamento</p>
-          <div class="grid grid--2">
-            <article class="cert-card cert-card--wip">
-              <div class="cert-card__icon">▤</div>
-              <p class="cert-card__title">Curso em andamento</p>
-              <p class="cert-card__desc">Nome do curso, instituição e previsão de conclusão.</p>
-            </article>
-
-            <article class="cert-card cert-card--wip">
-              <div class="cert-card__icon">▤</div>
-              <p class="cert-card__title">Curso em andamento</p>
-              <p class="cert-card__desc">Nome do curso, instituição e previsão de conclusão.</p>
-            </article>
-          </div>
-        </section>
-
-        <!-- 5. Contato -->
-        <section id="contato" class="pane pane--last">
-          <p class="code-comment">// contato</p>
-          <h2 class="pane__title">Contato</h2>
-          <p class="pane__lead">
-            A forma mais rápida de falar comigo é por e-mail ou LinkedIn.
-            Fique à vontade para entrar em contato.
-          </p>
-
-          <div class="grid grid--2">
-            <div class="contact-links">
-              <a class="contact-link" href="https://github.com/dev-Anthonym" target="_blank" rel="noopener noreferrer">
-                <span class="contact-link__icon">GH</span>
-                <span>
-                  <span class="contact-link__label">GitHub</span>
-                  <span class="contact-link__value">github.com/dev-Anthonym</span>
-                </span>
-              </a>
-
-              <a class="contact-link" href="https://www.linkedin.com/in/devanthony" target="_blank" rel="noopener noreferrer">
-                <span class="contact-link__icon">IN</span>
-                <span>
-                  <span class="contact-link__label">LinkedIn</span>
-                  <span class="contact-link__value">linkedin.com/in/devanthony</span>
-                </span>
-              </a>
-
-              <a class="contact-link" href="mailto:dev.anthony.m@gmail.com">
-                <span class="contact-link__icon">@</span>
-                <span>
-                  <span class="contact-link__label">E-mail</span>
-                  <span class="contact-link__value">dev.anthony.m@gmail.com</span>
-                </span>
-              </a>
-
-              <a class="contact-link" href="https://www.instagram.com/dev.anthony_/" target="_blank" rel="noopener noreferrer">
-                <span class="contact-link__icon">IG</span>
-                <span>
-                  <span class="contact-link__label">Instagram</span>
-                  <span class="contact-link__value">@dev.anthony_</span>
-                </span>
-              </a>
-            </div>
-
-            <form class="contact-form" id="contactForm" novalidate>
-              <p class="card__label">envie uma mensagem</p>
-
-              <label class="field">
-                <span class="field__label">nome</span>
-                <input type="text" name="nome" id="fieldName" placeholder="Seu nome">
-                <span class="field__error" id="errorName"></span>
-              </label>
-
-              <label class="field">
-                <span class="field__label">e-mail</span>
-                <input type="email" name="email" id="fieldEmail" placeholder="seuemail@exemplo.com">
-                <span class="field__error" id="errorEmail"></span>
-              </label>
-
-              <label class="field">
-                <span class="field__label">mensagem</span>
-                <textarea name="mensagem" id="fieldMessage" rows="4" placeholder="Escreva sua mensagem..."></textarea>
-                <span class="field__error" id="errorMessage"></span>
-              </label>
-
-              <button type="submit" class="btn btn--primary btn--full">enviar mensagem</button>
-              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-            </form>
-          </div>
-
-          <p class="footer-note">© 2026 Anthony Rafael Braga Magalhães. Construído com HTML, CSS e JavaScript.</p>
-        </section>
-
+        </div>
       </div>
-    </main>
-  </div>
+    </section>
 
-  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+    <!-- Tecnologias -->
+    <section id="tecnologias" class="section">
+      <header class="section__head">
+        <p class="section__file">pom.xml</p>
+        <h2 class="section__title" data-i18n="tec.title">Tecnologias</h2>
+      </header>
+      <div class="section__body">
+        <div class="tech-grid">
+          <div class="tech">
+            <p class="tech__name">Java</p>
+            <p class="tech__note" data-i18n="tec.java">Linguagem principal, estudo diário de POO</p>
+            <span class="tag tag--on" data-i18n="tec.uso">uso</span>
+          </div>
+          <div class="tech">
+            <p class="tech__name">Spring Boot</p>
+            <p class="tech__note" data-i18n="tec.spring">APIs REST no Sistema de Triagem</p>
+            <span class="tag" data-i18n="tec.estudando">estudando</span>
+          </div>
+          <div class="tech">
+            <p class="tech__name">SQLite</p>
+            <p class="tech__note" data-i18n="tec.sqlite">Persistência de dados no IntegraSaúde</p>
+            <span class="tag tag--on" data-i18n="tec.uso">uso</span>
+          </div>
+          <div class="tech">
+            <p class="tech__name">Git &amp; GitHub</p>
+            <p class="tech__note" data-i18n="tec.git">Versionamento com Conventional Commits</p>
+            <span class="tag tag--on" data-i18n="tec.uso">uso</span>
+          </div>
+          <div class="tech">
+            <p class="tech__name">Eclipse</p>
+            <p class="tech__note" data-i18n="tec.eclipse">IDE do dia a dia, com Spring Tools</p>
+            <span class="tag tag--on" data-i18n="tec.uso">uso</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="section">
+      <header class="section__head">
+        <p class="section__file">projetos/</p>
+        <h2 class="section__title" data-i18n="proj.title">Projetos</h2>
+      </header>
+      <div class="section__body">
+        <article class="project project--featured">
+          <div class="project__head">
+            <h3 class="project__title" data-i18n="proj.triagem.title">Sistema de Triagem de Chamados com IA</h3>
+            <span class="tag" data-i18n="proj.dev">em desenvolvimento</span>
+          </div>
+          <p class="project__desc" data-i18n="proj.triagem.desc">Nasceu do meu estágio, onde os chamados de suporte são lidos e classificados à mão. Quando um chamado é aberto, uma IA generativa classifica a categoria e a prioridade, resume o problema e sugere uma resposta.</p>
+          <ul class="list list--inline" data-i18n="proj.triagem.feat">
+            <li>Triagem automática com a API do Claude</li>
+            <li>Relatórios com consultas SQL</li>
+            <li>Relatório semanal em CSV</li>
+          </ul>
+          <div class="project__foot">
+            <div class="chips"><span class="chip">Java 21</span><span class="chip">Spring Boot 3</span><span class="chip">JPA</span><span class="chip">JUnit</span></div>
+            <a class="link" href="https://github.com/dev-Anthonym/SistemaTriagemdeChamados" target="_blank" rel="noopener" data-i18n="proj.repo">Ver repositório</a>
+          </div>
+        </article>
+
+        <div class="grid grid--2">
+          <article class="project">
+            <div class="project__head">
+              <h3 class="project__title">IntegraSaúde</h3>
+              <span class="tag tag--on" data-i18n="proj.done">concluído</span>
+            </div>
+            <p class="project__desc" data-i18n="proj.integra.desc">Lembretes de medicamentos e consultas com perfis de paciente e responsável. Se uma dose não é confirmada a tempo, o responsável recebe um alerta. Projeto em grupo da disciplina de Garantia da Qualidade de Software, em que fiquei com o desenvolvimento.</p>
+            <div class="project__foot">
+              <div class="chips"><span class="chip">Java</span><span class="chip">SQLite</span><span class="chip">JUnit 5</span><span class="chip">GitHub Actions</span></div>
+              <a class="link" href="https://github.com/dev-Anthonym/IntegraSaude" target="_blank" rel="noopener" data-i18n="proj.repo">Ver repositório</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__head">
+              <h3 class="project__title">Curso-JAVA</h3>
+              <span class="tag" data-i18n="proj.andamento">em andamento</span>
+            </div>
+            <p class="project__desc" data-i18n="proj.curso.desc">O código dos meus estudos diários de Java e Programação Orientada a Objetos, organizado aula por aula. É o registro mais fiel da minha evolução.</p>
+            <div class="project__foot">
+              <div class="chips"><span class="chip">Java</span><span class="chip">POO</span><span class="chip">Eclipse</span></div>
+              <a class="link" href="https://github.com/dev-Anthonym/Curso-JAVA" target="_blank" rel="noopener" data-i18n="proj.repo">Ver repositório</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formação -->
+    <section id="formacao" class="section">
+      <header class="section__head">
+        <p class="section__file">formacao.java</p>
+        <h2 class="section__title" data-i18n="form.title">Formação</h2>
+      </header>
+      <div class="section__body">
+        <div class="card card--row">
+          <div>
+            <p class="card__title" data-i18n="form.curso">Bacharelado em Ciência da Computação</p>
+            <p class="card__meta">Centro Universitário UNA · Contagem, MG</p>
+          </div>
+          <div class="card__aside">
+            <span class="tag" data-i18n="proj.andamento">em andamento</span>
+            <p class="card__meta" data-i18n="form.previsao">Conclusão prevista: dez/2028</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificados -->
+    <section id="certificados" class="section">
+      <header class="section__head">
+        <p class="section__file">certificados/</p>
+        <h2 class="section__title" data-i18n="cert.title">Certificados</h2>
+      </header>
+      <div class="section__body">
+        <div class="grid grid--2">
+          <div class="card">
+            <div class="project__head">
+              <p class="card__title" data-i18n="cert.java">Java: Programação Orientada a Objetos e Projetos</p>
+              <span class="tag" data-i18n="proj.andamento">em andamento</span>
+            </div>
+            <p class="card__meta">Udemy · 54h</p>
+          </div>
+          <div class="card">
+            <div class="project__head">
+              <p class="card__title" data-i18n="cert.ingles">Inglês do básico à fluência</p>
+              <span class="tag" data-i18n="proj.andamento">em andamento</span>
+            </div>
+            <p class="card__meta">Udemy · 66h</p>
+          </div>
+        </div>
+        <p class="note" data-i18n="cert.note">Novos certificados entram aqui assim que forem concluídos.</p>
+      </div>
+    </section>
+
+    <!-- Trajetória -->
+    <section id="trajetoria" class="section">
+      <header class="section__head">
+        <p class="section__file">git log</p>
+        <h2 class="section__title" data-i18n="traj.title">Linha do tempo</h2>
+        <p class="section__sub" data-i18n="traj.sub">Minha evolução contada como um histórico de commits, do mais recente ao mais antigo.</p>
+      </header>
+      <div class="section__body">
+        <ol class="gitlog">
+          <li class="gitlog__item">
+            <span class="gitlog__hash">a3f9c21</span>
+            <div>
+              <p class="gitlog__msg" data-i18n="traj.1"><b>feat:</b> começo a documentar minha evolução em público no GitHub, LinkedIn, Instagram e YouTube</p>
+              <p class="gitlog__date">nov/2026</p>
+            </div>
+          </li>
+          <li class="gitlog__item">
+            <span class="gitlog__hash">7b20e4d</span>
+            <div>
+              <p class="gitlog__msg" data-i18n="traj.2"><b>feat(projeto):</b> início do Sistema de Triagem de Chamados com IA</p>
+              <p class="gitlog__date">nov/2026</p>
+            </div>
+          </li>
+          <li class="gitlog__item">
+            <span class="gitlog__hash">e51d0a8</span>
+            <div>
+              <p class="gitlog__msg" data-i18n="traj.3"><b>feat(projeto):</b> entrega do IntegraSaúde</p>
+              <p class="gitlog__date">2026</p>
+            </div>
+          </li>
+          <li class="gitlog__item">
+            <span class="gitlog__hash">c84b6f2</span>
+            <div>
+              <p class="gitlog__msg" data-i18n="traj.4"><b>chore(estudos):</b> início dos cursos de Java e de inglês na Udemy</p>
+              <p class="gitlog__date">2026</p>
+            </div>
+          </li>
+          <li class="gitlog__item">
+            <span class="gitlog__hash">19ea7c3</span>
+            <div>
+              <p class="gitlog__msg" data-i18n="traj.5"><b>feat(carreira):</b> estágio de TI na Prefeitura de Contagem</p>
+              <p class="gitlog__date">jun/2025</p>
+            </div>
+          </li>
+          <li class="gitlog__item">
+            <span class="gitlog__hash">0d4f8b1</span>
+            <div>
+              <p class="gitlog__msg" data-i18n="traj.6"><b>init:</b> começo da graduação em Ciência da Computação na UNA Contagem</p>
+              <p class="gitlog__date">2025</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Conteúdos -->
+    <section id="conteudos" class="section">
+      <header class="section__head">
+        <p class="section__file">conteudos/</p>
+        <h2 class="section__title" data-i18n="cont.title">Conteúdos</h2>
+        <p class="section__sub" data-i18n="cont.sub">Onde eu mostro o que estou aprendendo.</p>
+      </header>
+      <div class="section__body">
+        <div class="grid grid--3">
+          <a class="channel" href="https://youtube.com/@dev.anthonym" target="_blank" rel="noopener">
+            <p class="channel__net">YouTube</p>
+            <p class="channel__handle">@dev.anthonym</p>
+            <p class="channel__desc" data-i18n="cont.yt">Videoaulas em inglês sobre o que estudo em Java, reflexões e minha evolução na área.</p>
+          </a>
+          <a class="channel" href="https://www.instagram.com/dev.anthony_/" target="_blank" rel="noopener">
+            <p class="channel__net">Instagram</p>
+            <p class="channel__handle">@dev.anthony_</p>
+            <p class="channel__desc" data-i18n="cont.ig">Explicações rápidas, notícias e memes da área tech, num tom mais descontraído.</p>
+          </a>
+          <a class="channel" href="https://www.linkedin.com/in/devanthony/" target="_blank" rel="noopener">
+            <p class="channel__net">LinkedIn</p>
+            <p class="channel__handle">in/devanthony</p>
+            <p class="channel__desc" data-i18n="cont.li">Minha trajetória profissional: projetos, cursos e aprendizados.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section">
+      <header class="section__head">
+        <p class="section__file">contato.sh</p>
+        <h2 class="section__title" data-i18n="contato.title">Contato</h2>
+        <p class="section__sub" data-i18n="contato.sub">O jeito mais rápido de falar comigo é por e-mail ou pelo LinkedIn.</p>
+      </header>
+      <div class="section__body grid grid--contact">
+        <ul class="contact-list">
+          <li><span class="contact-list__label">e-mail</span><a href="mailto:dev.anthony.m@gmail.com">dev.anthony.m@gmail.com</a></li>
+          <li><span class="contact-list__label">linkedin</span><a href="https://www.linkedin.com/in/devanthony/" target="_blank" rel="noopener">in/devanthony</a></li>
+          <li><span class="contact-list__label">github</span><a href="https://github.com/dev-Anthonym" target="_blank" rel="noopener">dev-Anthonym</a></li>
+          <li><span class="contact-list__label">instagram</span><a href="https://www.instagram.com/dev.anthony_/" target="_blank" rel="noopener">@dev.anthony_</a></li>
+        </ul>
+
+        <form class="form" id="contactForm" action="https://formspree.io/f/SEU_ID" method="POST" novalidate>
+          <label class="field">
+            <span data-i18n="form.nome">Nome</span>
+            <input type="text" name="nome" id="fieldName" autocomplete="name">
+            <small class="field__error" id="errorName"></small>
+          </label>
+          <label class="field">
+            <span>E-mail</span>
+            <input type="email" name="email" id="fieldEmail" autocomplete="email">
+            <small class="field__error" id="errorEmail"></small>
+          </label>
+          <label class="field">
+            <span data-i18n="form.msg">Mensagem</span>
+            <textarea name="mensagem" id="fieldMessage" rows="5"></textarea>
+            <small class="field__error" id="errorMessage"></small>
+          </label>
+          <button type="submit" class="btn btn--primary" data-i18n="form.enviar">Enviar mensagem</button>
+          <p class="form__status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p>© 2026 Anthony Rafael Braga Magalhães</p>
+      <p class="footer__ai" data-i18n="footer.ai">Este site foi desenvolvido com IA generativa (Claude). Meu foco de estudo é o back-end com Java.</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

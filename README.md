@@ -1,11 +1,9 @@
 # Portfólio | Anthony Magalhães
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Feito com IA](https://img.shields.io/badge/Feito_com-IA_(Claude)-39FF14?style=for-the-badge&labelColor=111214)
 ![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
 
-Meu portfólio pessoal como desenvolvedor back-end Java em formação. Reúne quem eu sou, as tecnologias que estou estudando, meus projetos, certificados e formas de contato.
+Meu portfólio pessoal como desenvolvedor back-end Java em formação. Reúne quem eu sou, as tecnologias que uso e estudo, meus projetos, minha trajetória e formas de contato.
 
 🔗 **Acesse:** [dev-anthonym.github.io/Portfolio](https://dev-anthonym.github.io/Portfolio)
 
@@ -15,27 +13,19 @@ Meu portfólio pessoal como desenvolvedor back-end Java em formação. Reúne qu
 
 ## 📌 Seções
 
-| Seção | O que mostra |
-|---|---|
-| **Início** | Apresentação, área de interesse e objetivo profissional, com um cartão de apresentação escrito como classe Java |
-| **Sobre mim** | Interesses, habilidades, matriz de tecnologias, boas práticas de código e estatísticas do GitHub |
-| **Projetos** | Projetos desenvolvidos na graduação e nos estudos em Java |
-| **Certificados** | Cursos concluídos e em andamento |
-| **Contato** | GitHub, LinkedIn, e-mail, Instagram e formulário de mensagem |
+Início, Sobre mim, Tecnologias, Projetos, Formação, Certificados, Linha do tempo (contada como um histórico de commits), Conteúdos e Contato.
 
 ## ✨ Funcionalidades
 
-- Alternância entre **modo claro e modo escuro**
-- Layout **responsivo**, adaptado para celular e computador
-- Navegação por seções com botão de voltar ao topo
+- Versão em **português e inglês**, com botão de troca
+- **Modo claro e escuro**
+- Layout **responsivo**, para celular e computador
+- Botão para **baixar o currículo** em PDF
 - Estatísticas do GitHub atualizadas automaticamente
 
-## 🛠️ Tecnologias
+## 🤖 Sobre o desenvolvimento
 
-- **HTML5** para a estrutura semântica das seções
-- **CSS3** para o layout, a responsividade e os temas claro e escuro
-- **JavaScript** para a troca de tema e as interações da página
-- **GitHub Pages** para a hospedagem
+Este site foi desenvolvido com **IA generativa (Claude)**. Meu foco de estudo é o **back-end com Java**: os projetos que estão no portfólio são onde está o meu aprendizado.
 
 ## 💻 Como rodar localmente
 
@@ -44,14 +34,7 @@ git clone https://github.com/dev-Anthonym/Portfolio.git
 cd Portfolio
 ```
 
-Depois é só abrir o arquivo `index.html` no navegador. Não há dependências para instalar.
-
-## 📚 O que aprendi
-
-- Organizar uma página em seções com HTML semântico
-- Criar um layout responsivo com CSS
-- Implementar troca de tema com JavaScript
-- Publicar um site estático com GitHub Pages
+Depois é só abrir o arquivo `index.html` no navegador.
 
 ## 📫 Contato
 
