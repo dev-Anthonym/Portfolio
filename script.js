@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "theme.dark": "dark",
     "theme.light": "light",
 
-    "hero.role": "Back-end Java developer in training · Computer Science at UNA Contagem",
-    "hero.pitch": "I study Java every day and build systems that solve real problems, like the support ticket triage I deal with at my IT internship.",
+    "hero.role": "Back-end Java developer in training · Computer Science",
+    "hero.pitch": "I’m building my career in back-end development with Java. Every line of code is a step forward, and I share this whole journey on my social media for anyone who wants to follow along.",
     "hero.status": "Open to software development internships",
     "hero.cta1": "See projects",
     "hero.cta2": "Download résumé",

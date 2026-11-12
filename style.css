@@ -151,7 +151,7 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
 }
 .hero__role { margin-top: 0.5rem; color: var(--text-2); font-size: 1rem; }
-.hero__pitch { font-size: 1.2rem; max-width: 34em; margin-bottom: 1.5rem; }
+.hero__pitch { font-size: 1.1rem; max-width: 34em; margin-bottom: 1.5rem; }
 
 .status { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-2); margin-bottom: 2rem; }
 .status__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--neon); box-shadow: 0 0 0 4px var(--neon-soft); }
