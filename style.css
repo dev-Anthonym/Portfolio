@@ -221,6 +221,63 @@ img { max-width: 100%; display: block; }
 
 .github-stats { display: flex; flex-wrap: wrap; gap: 1rem; }
 .github-stats img { height: 165px; width: auto; }
+/* Gráfico de contribuições do GitHub */
+:root {
+  --contrib-0: #161b22;
+  --contrib-1: #0e4429;
+  --contrib-2: #006d32;
+  --contrib-3: #26a641;
+  --contrib-4: #39d353;
+}
+[data-theme="light"] {
+  --contrib-0: #ebedf0;
+  --contrib-1: #9be9a8;
+  --contrib-2: #40c463;
+  --contrib-3: #30a14e;
+  --contrib-4: #216e39;
+}
+.contrib__total { font-size: 0.95rem; margin-bottom: 1rem; }
+.contrib__scroll { overflow-x: auto; padding-bottom: 0.25rem; }
+.contrib {
+  display: grid;
+  grid-template-columns: 28px repeat(53, 10px);
+  grid-template-rows: 16px repeat(7, 11px);
+  gap: 3px;
+  width: max-content;
+}
+.contrib__cell {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  background: var(--contrib-0);
+  outline: 1px solid rgba(255, 255, 255, 0.04);
+  outline-offset: -1px;
+}
+[data-theme="light"] .contrib__cell { outline-color: rgba(27, 31, 35, 0.06); }
+.contrib__cell[data-level="1"] { background: var(--contrib-1); }
+.contrib__cell[data-level="2"] { background: var(--contrib-2); }
+.contrib__cell[data-level="3"] { background: var(--contrib-3); }
+.contrib__cell[data-level="4"] { background: var(--contrib-4); }
+.contrib__month, .contrib__day {
+  font-size: 0.7rem;
+  line-height: 10px;
+  color: var(--text-2);
+  white-space: nowrap;
+}
+.contrib__day { align-self: center; grid-column: 1; }
+.contrib__month { overflow: visible; }
+.contrib__legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+  margin-top: 0.75rem;
+  font-size: 0.72rem;
+  color: var(--text-3);
+}
+.contrib__legend span:first-child { margin-right: 4px; }
+.contrib__legend span:last-child { margin-left: 4px; }
 
 .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.75rem; }
 .tech { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.5rem; display: flex; flex-direction: column; gap: 0.4rem; align-items: flex-start; }

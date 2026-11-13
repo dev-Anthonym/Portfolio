@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "sobre.objetivos": "goals",
     "sobre.objetivos.list": "<li>Land a software development internship</li><li>Go deeper into Java and Spring Boot</li><li>Become fluent in English</li><li>Graduate in 2028</li>",
     "sobre.github": "github activity",
+    "contrib.menos": "Less",
+    "contrib.mais": "More",
 
     "tec.title": "Stack",
     "tec.java": "Main language, daily OOP practice",
@@ -80,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "form.msg": "Message",
     "form.enviar": "Send message",
 
-    "footer.ai": "This website was built with generative AI (Claude). My field of study is back-end development with Java."
+    "footer.ai": "This website was built with generative AI (Claude)."
   };
 
   const MSG = {
@@ -174,8 +176,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { rootMargin: "-40% 0px -55% 0px" });
   document.querySelectorAll("main section[id]").forEach((section) => spy.observe(section));
 
-  document.querySelectorAll(".github-stats img").forEach((img) => {
-    img.addEventListener("error", () => { img.style.display = "none"; });
+    document.querySelectorAll(".github-stats img").forEach((img) => {
+    img.addEventListener("error", () => {
+      img.style.display = "none";
+      const card = img.closest(".card");
+      const allHidden = Array.from(card.querySelectorAll("img")).every((i) => i.style.display === "none");
+      if (allHidden) card.style.display = "none";
+    });
   });
 
   const form = document.getElementById("contactForm");

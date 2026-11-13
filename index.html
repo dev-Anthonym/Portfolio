@@ -103,8 +103,8 @@
       </header>
       <div class="section__body">
         <div class="prose">
-          <p data-i18n="sobre.p1">Sou estudante de Ciência da Computação na UNA Contagem e estou construindo minha carreira em desenvolvimento back-end com Java, um passo de cada vez, e em público.</p>
-          <p data-i18n="sobre.p2">Decidi registrar toda a minha jornada na programação. No YouTube, gravo videoaulas em inglês sobre o que estou estudando, para praticar o idioma e aprender ensinando. No Instagram, compartilho a área tech de um jeito mais leve. No LinkedIn e no GitHub, ficam meus projetos, cursos e marcos da carreira.</p>
+          <p data-i18n="sobre.p1">Sou estudante de Ciência da Computação, e o que me prende na programação é transformar um problema em algo que funciona. É no back-end, com Java, que eu quero construir minha carreira.</p>
+          <p data-i18n="sobre.p2">Decidi registrar toda a minha jornada na programação, e o Instagram é o lugar onde mais compartilho esse dia a dia: os acertos, os erros e tudo o que vou aprendendo pelo caminho. Se você também está começando na área, ou só quer acompanhar de perto, me segue no <a class="link" href="https://www.instagram.com/dev.anthonym/" target="_blank" rel="noopener">@dev.anthonym</a>. Para conteúdos mais longos e detalhados, tem o YouTube, e minha trajetória profissional fica no LinkedIn e no GitHub.</p>
           <p data-i18n="sobre.p3">Por trás do conteúdo, estão os estudos diários e os projetos, como o Sistema de Triagem de Chamados, inspirado no meu estágio de TI na Prefeitura de Contagem. Uso IA generativa como ferramenta de estudo e desenvolvimento, sempre buscando entender o código que vai para os meus projetos.</p>
         </div>
 
@@ -131,9 +131,18 @@
 
         <div class="card">
           <p class="card__label" data-i18n="sobre.github">atividade no github</p>
-          <div class="github-stats">
-            <img src="https://github-readme-stats.vercel.app/api?username=dev-Anthonym&show_icons=true&hide_title=true&hide_border=true&bg_color=00000000&title_color=39ff14&text_color=9a9ba0&icon_color=39ff14" alt="Estatísticas do GitHub de dev-Anthonym" loading="lazy">
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dev-Anthonym&layout=compact&hide_title=true&hide_border=true&bg_color=00000000&text_color=9a9ba0" alt="Linguagens mais usadas por dev-Anthonym" loading="lazy">
+          <p class="contrib__total" id="contribTotal"></p>
+          <div class="contrib__scroll">
+            <div class="contrib" id="contribGraph" aria-label="Gráfico de contribuições no GitHub"></div>
+          </div>
+          <div class="contrib__legend">
+            <span data-i18n="contrib.menos">Menos</span>
+            <span class="contrib__cell" data-level="0"></span>
+            <span class="contrib__cell" data-level="1"></span>
+            <span class="contrib__cell" data-level="2"></span>
+            <span class="contrib__cell" data-level="3"></span>
+            <span class="contrib__cell" data-level="4"></span>
+            <span data-i18n="contrib.mais">Mais</span>
           </div>
         </div>
       </div>
@@ -287,7 +296,7 @@
           <li class="gitlog__item">
             <span class="gitlog__hash">a3f9c21</span>
             <div>
-              <p class="gitlog__msg" data-i18n="traj.1"><b>feat:</b> começo a documentar minha evolução em público no GitHub, LinkedIn, Instagram e YouTube</p>
+              <p class="gitlog__msg" data-i18n="traj.1"><b>feat:</b> início do registro da minha evolução em público no GitHub, LinkedIn, Instagram e YouTube</p>
               <p class="gitlog__date">nov/2026</p>
             </div>
           </li>
@@ -301,14 +310,14 @@
           <li class="gitlog__item">
             <span class="gitlog__hash">e51d0a8</span>
             <div>
-              <p class="gitlog__msg" data-i18n="traj.3"><b>feat(projeto):</b> entrega do IntegraSaúde</p>
+              <p class="gitlog__msg" data-i18n="traj.3"><b>feat(projeto):</b> entrega final do projeto IntegraSaúde</p>
               <p class="gitlog__date">nov/2026</p>
             </div>
           </li>
           <li class="gitlog__item">
             <span class="gitlog__hash">c84b6f2</span>
             <div>
-              <p class="gitlog__msg" data-i18n="traj.4"><b>chore(estudos):</b> começo a estudar Java e Inglês com consistência, todos os dias</p>
+              <p class="gitlog__msg" data-i18n="traj.4"><b>chore(estudos):</b> consistência nos estudos em Java e Inglês</p>
               <p class="gitlog__date">nov/2026</p>
             </div>
           </li>
@@ -406,5 +415,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="contrib.js"></script>
 </body>
 </html>
